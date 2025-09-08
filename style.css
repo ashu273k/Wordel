@@ -8,6 +8,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -143,4 +144,147 @@ body {
 
 .winner {
   animation: rainbow 4s infinite linear;
+}
+
+.keyboard {
+    margin: 20px auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Hide keyboard by default */
+.keyboard {
+    display: none;
+}
+
+/* Show keyboard only on mobile screens */
+@media (max-width: 600px) {
+    .keyboard {
+        display: flex;
+        max-width: 98vw;
+        gap: 4px;
+        align-items: center; /* Add this to center rows */
+    }
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.key {
+    padding: 10px 0;
+    width: 32px;
+    font-size: 1.1rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: #f8f8f8;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.key:active {
+    background: #ddd;
+}
+
+.key-action {
+    width: 50px;
+    font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px;
+    }
+    .brand {
+        font-size: 28px;
+    }
+    .scoreboard {
+        max-width: 98vw;
+        margin: 8px auto;
+        row-gap: 6px;
+        column-gap: 3px;
+    }
+    .scoreboard-letter {
+        height: 32px;
+        width: 32px;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+    .spiral {
+        font-size: 32px;
+    }
+    .info-bar {
+        font-size: 1rem;
+        padding: 6px;
+    }
+    .keyboard {
+        max-width: 98vw;
+        gap: 4px;
+        align-items: center; /* Add this to center rows */
+    }
+    .keyboard-row {
+        justify-content: center;
+        width: 100%;
+    }
+    .key {
+        width: 24px;
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+    .key-action {
+        width: 38px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #181818;
+    color: #eee;
+}
+
+body.dark-mode .navbar {
+    border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .scoreboard-letter {
+    background: #222;
+    border-color: #444;
+    color: #eee;
+}
+
+body.dark-mode .keyboard {
+    background: #222;
+}
+
+body.dark-mode .key {
+    background: #333;
+    color: #eee;
+    border-color: #555;
+}
+
+body.dark-mode .key:active {
+    background: #444;
+}
+
+body.dark-mode .correct {
+    background-color: #228B22;
+    color: #fff;
+}
+
+body.dark-mode .close {
+    background-color: #b8860b;
+    color: #fff;
+}
+
+body.dark-mode .wrong {
+    background-color: #555;
+    color: #fff;
 }
